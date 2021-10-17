@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação</title>
+    <script src="animacao.js"></script>
+    <script src="bola.js"></script>
+</head>
+<body style="background-color: #121212;">
+    <div style="text-align: center; ">
+
+        <canvas id="canvas_animacao" width="1000" height="1000"></canvas>
+
+    </div>
+
+    <script>
+
+        // Referências para o Canvas
+        var canvas = document.getElementById('canvas_animacao');
+        var context = canvas.getContext('2d');
+
+        // var cores = ["orange", "blue", "yellow", "red","green","pink", "purple", "brown","grey", "baby blue", "navy blue", "turquoise", "beige", "burgundy", "baby pink", "bright pink", "mostard", "salmon", "lilac", "acquamarine", "violet", "khaki", "caramel"] 
+                
+        var b1 = new Bola(context);
+        b1.x = 100;
+        b1.y = 200;
+        b1.velocidadeX = 20;
+        b1.velocidadeY = -10;
+        b1.cor = "orange"
+        b1.raio = 20;
+
+        var b2 = new Bola(context);
+        b2.x = 200;
+        b2.y = 100;
+        b2.velocidadeX = -10;
+        b2.velocidadeY = 20;
+        b2.cor = 'blue';
+        b2.raio = 30;
+
+        var b3 = new Bola(context);
+        b3.x = 600;
+        b3.y = 100;
+        b3.velocidadeX = -5;
+        b3.velocidadeY = 15;
+        b3.cor = 'purple';
+        b3.raio = 50;
+
+        var b4 = new Bola(context);
+        b4.x = 400;
+        b4.y = 200;
+        b4.velocidadeX = 10;
+        b4.velocidadeY = 5;
+        b4.cor = 'pink';
+        b4.raio = 100;
+
+        var b5 = new Bola(context);
+        b5.x = 300;
+        b5.y = 200;
+        b5.velocidadeX = -30;
+        b5.velocidadeY = 40;
+        b5.cor = 'yellow';
+        b5.raio = 26;
+
+        var b6 = new Bola(context);
+        b5.x = 150;
+        b5.y = 200;
+        b5.velocidadeX = -12;
+        b5.velocidadeY = 14;
+        b5.cor = 'violet';
+        b5.raio = 80;
+
+        // Criando o loop de animação
+        var animacao = new Animacao();
+        animacao.novoSprite(b1);
+        animacao.novoSprite(b2);
+        animacao.novoSprite(b3);
+        animacao.novoSprite(b4);
+        animacao.novoSprite(b5);
+        animacao.novoSprite(b6);
+       
+        // "Ligar" a animação
+        animacao.ligar();
+
+    </script>
+    
+</body>
+</html>
